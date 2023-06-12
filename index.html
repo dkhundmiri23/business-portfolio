@@ -6,15 +6,15 @@
 </head>
 <body>
   <header>
-    <h1>My Portfolio</h1>
+    <h1>DANIYAL KHUNDMIRI</h1>
   </header>
 
   <nav>
     <ul>
       <li><a href="#home">Home</a></li>
-      <li><button id="openModal">About</button></li>
-      <li><button id="openModal">projects</button></li>
-      <li><button id="openModal">Contact Me</button></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
@@ -26,7 +26,8 @@
 
     <section id="about">
       <h2>About Me</h2>
-      <p>I am a web developer with a passion for creating interactive websites.</p>
+      <p>I am a Software Engineer who has a passion for building innovative and user-friendly software solutions.</p>
+      <button id="aboutBtn">Learn More</button>
     </section>
 
     <section id="projects">
@@ -36,6 +37,7 @@
         <li>Project 2</li>
         <li>Project 3</li>
       </ul>
+      <button id="projectsBtn">View Projects</button>
     </section>
 
     <section id="contact">
@@ -49,8 +51,16 @@
 
         <button type="submit">Submit</button>
       </form>
+      <button id="contactBtn">Open Contact Form</button>
     </section>
   </main>
+
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div id="modalContent"></div>
+    </div>
+  </div>
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="script.js"></script>

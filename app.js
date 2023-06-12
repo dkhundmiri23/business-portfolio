@@ -19,6 +19,15 @@ $(document).ready(function() {
       let projectsContent = 'Here are some of the projects I have worked on:<ul><li>Project 1</li><li>Project 2</li><li>Project 3</li></ul>';
       openModal(projectsContent);
     });
+    // interaction 4: open modal for my resume
+    $('#resumeModal .close').click(function() {
+        $('#resumeModal').hide();
+      });
+    
+      $('nav a[href="#resume"]').click(function(event) {
+        event.preventDefault();
+        $('#resumeModal').show();
+      });
   
     // Interaction 4: Open Modal for "Contact Me"
     $('#contactBtn').click(function() {

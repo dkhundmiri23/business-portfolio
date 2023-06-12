@@ -1,37 +1,56 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>My Portfolio</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
+  <title>Portfolio</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-  <!-- Navigation -->
+  <header>
+    <h1>My Portfolio</h1>
+  </header>
+
   <nav>
     <ul>
       <li><a href="#home">Home</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><button id="openModal">About</button></li>
+      <li><button id="openModal">projects</button></li>
+      <li><button id="openModal">Contact Me</button></li>
     </ul>
   </nav>
 
-  <!-- Header -->
-  <header id="home">
-    <h1>daniyal khundmiri</h1>
-    <p>software engineer</p>
-  </header>
+  <main>
+    <section id="home">
+      <h2>Welcome</h2>
+      <p>Welcome to my portfolio website!</p>
+    </section>
 
-  <!-- Projects -->
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="project">
-      <h3>Project 1</h3>
-      <p>Description of Project 1</p>
-    </div>
-    <div class="project">
-      <h3>Project 2</h3>
-      <p>Description of Project 2</p>
-    </div>
-  </section>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>I am a web developer with a passion for creating interactive websites.</p>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <ul>
+        <li>Project 1</li>
+        <li>Project 2</li>
+        <li>Project 3</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+  </main>
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="script.js"></script>

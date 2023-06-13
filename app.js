@@ -15,7 +15,6 @@ $(document).ready(function() {
   });
 
   // Interaction 3: Open Modals
-  // Interaction 3: Open Modals
   $('nav a[href="#about"]').click(function(event) {
     event.preventDefault();
     $('#modal-overlay').show();

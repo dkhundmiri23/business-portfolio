@@ -1,65 +1,69 @@
-$(document).ready(function() {
-    // Interaction 1: Smooth Scrolling
-    $('nav a').click(function(event) {
-      event.preventDefault();
-      let target = $(this).attr('href');
-      $('html, body').animate({
-        scrollTop: $(target).offset().top
-      }, 800);
-    });
-  
-    // Interaction 2: Open Modal for "About Me"
-    $('#aboutBtn').click(function() {
-      let aboutContent = 'I am a Software Engineer who brings a unique perspective to the field based on my previous career as a retail associate. In my previous role, I developed strong communication and problem-solving skills, working closely with customers to meet their needs and address any challenges they encountered. This experience taught me the value of empathy and user-centric design, which I now bring to my software engineering work.';
-      openModal(aboutContent);
-    });
-  
-    // Interaction 3: Open Modal for "Projects"
-    $('#projectsBtn').click(function() {
-      let projectsContent = 'Here are some of the projects I have worked on:<ul><li>Project 1</li><li>Project 2</li><li>Project 3</li></ul>';
-      openModal(projectsContent);
-    });
-    // interaction 4: open modal for my resume
-    $('#resumeModal .close').click(function() {
-        $('#resumeModal').hide();
-      });
-    
-      $('nav a[href="#resume"]').click(function(event) {
-        event.preventDefault();
-        $('#resumeModal').show();
-      });
-  
-    // Interaction 4: Open Modal for "Contact Me"
-    $('#contactBtn').click(function() {
-      let contactForm = '<form><label for="name">Name:</label><input type="text" id="name" name="name"><label for="email">Email:</label><input type="email" id="email" name="email"><button type="submit">Submit</button></form>';
-      openModal(contactForm);
-    });
-  
-    // Close Modal
-    $('.close').click(function() {
-      closeModal();
-    });
-  
-    // Submit Contact Form
-    $(document).on('submit', 'form', function(event) {
-      event.preventDefault();
-      let name = $('#name').val();
-      let email = $('#email').val();
-      let message = 'Thank you, ' + name + '! I will get back to you at ' + email + '.';
-      openModal(message);
-      $('#name').val('');
-      $('#email').val('');
-    });
-  
-    // Helper function to open modal
-    function openModal(content) {
-      $('#modalContent').html(content);
-      $('#modal').fadeIn();
-    }
-  
-    // Helper function to close modal
-    function closeModal() {
-      $('#modal').fadeOut();
-    }
-  });
-  
+// $(document).ready(function() {
+//   // Interaction 1: Expand "About Me" Content
+//   $('#aboutBtn').click(function() {
+//     $('#aboutContent').toggleClass('hidden');
+//   });
+
+//   // Interaction 2: Submit Contact Form
+//   $('#contactForm').submit(function(event) {
+//     event.preventDefault();
+//     var name = $('#name').val();
+//     var email = $('#email').val();
+//     var message = 'Thank you, ' + name + '! I will get back to you at ' + email + '.';
+//     $('#contactForm')[0].reset();
+//     showMessage(message);
+//   });
+
+//   // Interaction 3: Open Modals
+//   $('.modal .close').click(function() {
+//     $(this).closest('.modal').hide();
+//   });
+
+//   $('nav a[href="#about"]').click(function(event) {
+//     event.preventDefault();
+//     $('#aboutModal').show();
+//   });
+
+//   $('nav a[href="#projects"]').click(function(event) {
+//     event.preventDefault();
+//     $('#projectsModal').show();
+//   });
+
+//   $('nav a[href="#contact"]').click(function(event) {
+//     event.preventDefault();
+//     $('#contactModal').show();
+//   });
+
+//   // Carousel for Pictures
+//   var images = $('#imageCarousel img');
+//   var currentIndex = 0;
+
+//   function showImage(index) {
+//     images.hide();
+//     images.eq(index).show();
+//   }
+
+//   function nextImage() {
+//     currentIndex = (currentIndex + 1) % images.length;
+//     showImage(currentIndex);
+//   }
+
+//   setInterval(nextImage, 2000);
+
+//   // Change Header Color
+//   $('#headerTitle').click(function() {
+//     var header = $('header');
+//     header.toggleClass('blue-header');
+//     if (header.hasClass('blue-header')) {
+//       header.css('background-color', 'blue');
+//     } else {
+//       header.css('background-color', 'red');
+//     }
+//   });
+
+//   // Helper function to display messages
+//   function showMessage(message) {
+//     var messageElement = $('<p>').text(message);
+//     $('#contactForm').append(messageElement);
+//   }
+// });

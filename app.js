@@ -1,69 +1,54 @@
-// $(document).ready(function() {
-//   // Interaction 1: Expand "About Me" Content
-//   $('#aboutBtn').click(function() {
-//     $('#aboutContent').toggleClass('hidden');
-//   });
+// Open modal
+function openModal(modalId) {
+  document.getElementById(modalId).style.display = 'block';
+}
 
-//   // Interaction 2: Submit Contact Form
-//   $('#contactForm').submit(function(event) {
-//     event.preventDefault();
-//     var name = $('#name').val();
-//     var email = $('#email').val();
-//     var message = 'Thank you, ' + name + '! I will get back to you at ' + email + '.';
-//     $('#contactForm')[0].reset();
-//     showMessage(message);
-//   });
+// Close modal
+function closeModal(modalId) {
+  document.getElementById(modalId).style.display = 'none';
+}
 
-//   // Interaction 3: Open Modals
-//   $('.modal .close').click(function() {
-//     $(this).closest('.modal').hide();
-//   });
+// Submit form
+function submitForm() {
+  var name = document.getElementById('name').value;
+  var email = document.getElementById('email').value;
+  var message = document.getElementById('message').value;
+  // Submit form logic...
+  closeModal('contactModal');
+  var successMessage = document.createElement('p');
+  successMessage.innerHTML = 'Thank you, ' + name + '! Your message has been sent.';
+  document.querySelector('.content').appendChild(successMessage);
+}
 
-//   $('nav a[href="#about"]').click(function(event) {
-//     event.preventDefault();
-//     $('#aboutModal').show();
-//   });
+// Carousel
+var slideIndex = 0;
+var images = document.querySelectorAll('.carousel img');
 
-//   $('nav a[href="#projects"]').click(function(event) {
-//     event.preventDefault();
-//     $('#projectsModal').show();
-//   });
+function carouselPrev() {
+  slideIndex--;
+  if (slideIndex < 0) {
+    slideIndex = images.length - 1;
+  }
+  showSlide(slideIndex);
+}
 
-//   $('nav a[href="#contact"]').click(function(event) {
-//     event.preventDefault();
-//     $('#contactModal').show();
-//   });
+function carouselNext() {
+  slideIndex++;
+  if (slideIndex >= images.length) {
+    slideIndex = 0;
+  }
+  showSlide(slideIndex);
+}
 
-//   // Carousel for Pictures
-//   var images = $('#imageCarousel img');
-//   var currentIndex = 0;
+function showSlide(index) {
+  for (var i = 0; i < images.length; i++) {
+    images[i].style.display = 'none';
+  }
+  images[index].style.display = 'block';
+}
 
-//   function showImage(index) {
-//     images.hide();
-//     images.eq(index).show();
-//   }
-
-//   function nextImage() {
-//     currentIndex = (currentIndex + 1) % images.length;
-//     showImage(currentIndex);
-//   }
-
-//   setInterval(nextImage, 2000);
-
-//   // Change Header Color
-//   $('#headerTitle').click(function() {
-//     var header = $('header');
-//     header.toggleClass('blue-header');
-//     if (header.hasClass('blue-header')) {
-//       header.css('background-color', 'blue');
-//     } else {
-//       header.css('background-color', 'red');
-//     }
-//   });
-
-//   // Helper function to display messages
-//   function showMessage(message) {
-//     var messageElement = $('<p>').text(message);
-//     $('#contactForm').append(messageElement);
-//   }
-// });
+// Change header color
+function changeHeaderColor() {
+  var header = document.getElementById('header');
+  header.classList.toggle('blue');
+}
